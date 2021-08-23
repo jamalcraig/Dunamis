@@ -1,21 +1,21 @@
 # Game Characters
-There is a [base class](https://cseegit.essex.ac.uk/ce301_2020/ce301_craig_jamal/-/blob/master/Unity%20CE301/Capstone%20Project/Assets/Scripts/GameCharacter.cs) that all characters in the game inherit methods and variables from.
+There is a [base class](https://github.com/jamalcraig/Dunamis/blob/main/Unity%20CE301/Capstone%20Project/Assets/Scripts/GameCharacter.cs) that all characters in the game inherit methods and variables from.
 
 [Player](#player)   
 [Racer](#racer)   
 [Player Clone](#player-clone)   
 
 ## Key Bindings
-I created a [singlet class](https://cseegit.essex.ac.uk/ce301_2020/ce301_craig_jamal/-/blob/master/Unity%20CE301/Capstone%20Project/Assets/Scripts/Bindings.cs) that handles all the player’s button inputs. Every class that requires button inputs must reference the singlet to find out if a button is being pressed. All Game Characters inherit a method that assigns the reference to the singlet. The method has to be called in order for the singlet to be referenced.
+I created a [singlet class](https://github.com/jamalcraig/Dunamis/blob/main/Unity%20CE301/Capstone%20Project/Assets/Scripts/Bindings.cs) that handles all the player’s button inputs. Every class that requires button inputs must reference the singlet to find out if a button is being pressed. All Game Characters inherit a method that assigns the reference to the singlet. The method has to be called in order for the singlet to be referenced.
 
 I had to make separate button binds for playing on the phone and testing in the Unity Editor. The default setting when the game starts is for the buttons to be bound for playing on iOS, so that I don’t have to keep on manually switching the button bindings to fit it before I build. It was like that in the past, so sometimes I would forget and have to build the whole game again to rectify it for use on iOS. When playing in the Unity Editor, I just have to press the “=” keyboard button at the start of play, and then the buttons will switch for the correct bindings for playing in the Editor. Pressing “-“ switches the binding mode to iOS’, which doesn’t function correctly in the Unity Editor.
 
 I couldn’t find a button binding map for ps4 controllers connected to iOS, so I had to use trial end error work out what was the correct input id for all the buttons on the PS4 controller. In the end, 25 working inputs were mapped. Consisting of 15 buttons and 10 axes. The trigger() method and the findingBut() method are remnants of how I used trial and error to work out which inputs did what.
-[Here is the button map I made](https://cseegit.essex.ac.uk/ce301_2020/ce301_craig_jamal/-/blob/master/Technical%20Documentation/Game%20Characters/ButtonMap.txt)  
+[Here is the button map I made](https://github.com/jamalcraig/Dunamis/blob/main/Technical%20Documentation/Game%20Characters/ButtonMap.txt)  
 
 
 ## Player   
-The [Player Controller Class](https://cseegit.essex.ac.uk/ce301_2020/ce301_craig_jamal/-/blob/master/Unity%20CE301/Capstone%20Project/Assets/Scripts/PlayerController.cs) is used to control the movement and functionality of the player.    
+The [Player Controller Class](https://github.com/jamalcraig/Dunamis/blob/main/Unity%20CE301/Capstone%20Project/Assets/Scripts/PlayerController.cs) is used to control the movement and functionality of the player.    
 
 ### Basic Gameplay Loop   
 In order to play the game as intended, the player is supposed to go around collecting Dunamis gems in order to earn points and collect ammunition that can be used to attack enemies with. The player can activate an ability that displays the shortest path to the nearest gem spawner that contains a Dunamis gem. The player must avoid being hit by enemy NPCs who chase and attack the player. If the player is hit by an enemy, they lose health. If the player’s health depletes to zero, the player will die, and the game will end. The player can defend themselves by throwing Dunamis gems at the enemies.   
@@ -24,7 +24,7 @@ In order to play the game as intended, the player is supposed to go around colle
 The player can use the left analogue stick on a PS4 controller to move the player in direction that the stick is pointing.   
 
 ### Pathfinding   
-The ability for the player to display the shortest path to the gem spawner that contains a Dunamis gem can be activated by pressing L1 on the PS4 Controller. When this ability is activated, the player will see a path of markers that lead to the nearest gem spawner that contains a Dunamis gem. The [player class](https://cseegit.essex.ac.uk/ce301_2020/ce301_craig_jamal/-/blob/master/Unity%20CE301/Capstone%20Project/Assets/Scripts/PlayerController.cs) does this by telling the [Player Pathfinding Class](https://cseegit.essex.ac.uk/ce301_2020/ce301_craig_jamal/-/blob/master/Unity%20CE301/Capstone%20Project/Assets/Scripts/TankPathFind.cs) to calculate a path using A* search.    
+The ability for the player to display the shortest path to the gem spawner that contains a Dunamis gem can be activated by pressing L1 on the PS4 Controller. When this ability is activated, the player will see a path of markers that lead to the nearest gem spawner that contains a Dunamis gem. The [player class](https://github.com/jamalcraig/Dunamis/blob/main/Unity%20CE301/Capstone%20Project/Assets/Scripts/PlayerController.cs) does this by telling the [Player Pathfinding Class](https://github.com/jamalcraig/Dunamis/blob/main/Unity%20CE301/Capstone%20Project/Assets/Scripts/TankPathFind.cs) to calculate a path using A* search.    
 
 For every node returned in the A* Search, a marker is placed in the air to display the path. If the player moves so that they are closer to the gem spawner, than a marker, that marker will disappear. If the player moves to a position where the marker is closer than the player to the gem spawner, the marker will reappear. When the player arrives at the gem spawner the path will be cleared so that the markers do not reappear when the player moves away from the gem spawner.    
 
@@ -37,7 +37,7 @@ In order to protect themselves from the horde of enemies that chase and attack t
 If the player is hit by an enemy, the player will have their health stolen. If the player’s health depletes to zero, the player will die, and the game will end. If the player kills an enemy carrying stolen health, the health orb will drop to the ground, and the player will be able to restore their health by walking into the health orb.  
 
 ### Animation
-The [model and animations](https://cseegit.essex.ac.uk/ce301_2020/ce301_craig_jamal/-/tree/master/Unity%20CE301/Capstone%20Project/Assets/Mixamo/David) that I used for the player are from [mixamo.com](https://www.mixamo.com/#/).  
+The [model and animations](https://github.com/jamalcraig/Dunamis/blob/main/Unity%20CE301/Capstone%20Project/Assets/Mixamo/David) that I used for the player are from [mixamo.com](https://www.mixamo.com/#/).  
 ![Player Model Image](Images/Player/David.png)   
 
 The animation controller that is used to animate the player is shared with the Player’s Clone. It consists of three layers. The Base, Throw, and Head layer. Since it is a shared animation controller, it doesn’t use all of the animations contained in the controller.   
@@ -69,7 +69,7 @@ The **Head Layer** uses an avatar mask that covers the Player Clone’s head and
 
 
 ## Racer
-This [class](https://cseegit.essex.ac.uk/ce301_2020/ce301_craig_jamal/-/blob/master/Unity%20CE301/Capstone%20Project/Assets/Scripts/Racer.cs) contains the functionality for the enemy NPC who chases and attacks the player.
+This [class](https://github.com/jamalcraig/Dunamis/blob/main/Unity%20CE301/Capstone%20Project/Assets/Scripts/Racer.cs) contains the functionality for the enemy NPC who chases and attacks the player.
 
 ### Basic Gameplay Loop
 Racer has been programmed to chase the player. When he is close to the player, he stetches his arms out. Once he is within attack range, he will swing at the player. If he hits the player, he will taunt and steal some of the player’s health. Then he will use A* Search to calculate the path to nearest exit and will run to it. The player is able to throw Dunamis at him. If the Dunamis hits him, he will die and drop the stolen health, which the player can go to collect. If Racer reaches the exit without dying, he will despawn and the player will not be able to replenish the health stolen from them.
@@ -78,10 +78,10 @@ Racer has been programmed to chase the player. When he is close to the player, h
 ### Movement
 Racer mostly uses A* search to calculate his path. When spawned in, he will use A* search to calculate a path to the player’s position. The path is recalculated every 0.476 seconds, so that there aren’t too many A* Search calculations happening at one time, which could slow down the game. This calculation rate is fast enough for the player not to notice that there is a delay in the Racer following their movements. 
 
-Racer uses a [pathfinding class](https://cseegit.essex.ac.uk/ce301_2020/ce301_craig_jamal/-/blob/master/Unity%20CE301/Capstone%20Project/Assets/Scripts/RacerPathFind.cs) that extends the [base A* Search class](https://cseegit.essex.ac.uk/ce301_2020/ce301_craig_jamal/-/blob/master/Unity%20CE301/Capstone%20Project/Assets/Scripts/AStarBase.cs). When the Racer needs to find a path to the player or exit, it will set a Boolean inside the [Racer class](https://cseegit.essex.ac.uk/ce301_2020/ce301_craig_jamal/-/blob/master/Unity%20CE301/Capstone%20Project/Assets/Scripts/Racer.cs) to true. The Racer Pathfinding Class constantly checks to see whether these two Booleans are set to true. When they are set to true, the Racer Pathfinding Class will calculate a path to the appropriate target using A* Search.   
+Racer uses a [pathfinding class](https://github.com/jamalcraig/Dunamis/blob/main/Unity%20CE301/Capstone%20Project/Assets/Scripts/RacerPathFind.cs) that extends the [base A* Search class](https://github.com/jamalcraig/Dunamis/blob/main/Unity%20CE301/Capstone%20Project/Assets/Scripts/AStarBase.cs). When the Racer needs to find a path to the player or exit, it will set a Boolean inside the [Racer class](https://github.com/jamalcraig/Dunamis/blob/main/Unity%20CE301/Capstone%20Project/Assets/Scripts/Racer.cs) to true. The Racer Pathfinding Class constantly checks to see whether these two Booleans are set to true. When they are set to true, the Racer Pathfinding Class will calculate a path to the appropriate target using A* Search.   
 
 If a path to the player is requested, but cannot be found, (which is usually due to the player standing in a blocked path node,) the Racer will attempt use Line of Sight (LOS) to move directly to the player.    
-This works by first rotating the Racer to look directly at the player. Then continually at quick intervals, a ray with a limited range is cast from the Racer to in front of it. If the raycast hits the player, the Boolean that keeps record of whether the player is in LOS is set to true. If it doesn’t hit the player, it is set to false. If the player is in LOS, the Racer will move in a straight line directly to the player, using the method inherited from the [NPC Base class](https://cseegit.essex.ac.uk/ce301_2020/ce301_craig_jamal/-/blob/master/Unity%20CE301/Capstone%20Project/Assets/Scripts/BasicNPC.cs). If the player is not in LOS, the Racer will stand still.   
+This works by first rotating the Racer to look directly at the player. Then continually at quick intervals, a ray with a limited range is cast from the Racer to in front of it. If the raycast hits the player, the Boolean that keeps record of whether the player is in LOS is set to true. If it doesn’t hit the player, it is set to false. If the player is in LOS, the Racer will move in a straight line directly to the player, using the method inherited from the [NPC Base class](https://github.com/jamalcraig/Dunamis/blob/main/Unity%20CE301/Capstone%20Project/Assets/Scripts/BasicNPC.cs). If the player is not in LOS, the Racer will stand still.   
 
 When the Racer is at the end of the path calculated by the A* Search, in order to travel any remaining distance that is necessary to be in striking range of the player, the Racer will move in a straight line directly towards the player. Once within a certain distance, the Racer will stop moving, in order to prevent a collision with the player.   
 
@@ -99,7 +99,7 @@ When the Racer is in this state, at short intervals, it tells the Racer Pathfind
 When the Racer is in this state, the attack animation will be played. During the attack animation, a raycast will be fired from the Racer. If it hits the player, the player will lose health and this state will transition into the taunt state.   
 
 **Taunt State**   
-When the Racer is in this state, the taunt animation is played. At the end of the animation, a call to a method in the [Racer Animation Handler Class](https://cseegit.essex.ac.uk/ce301_2020/ce301_craig_jamal/-/blob/master/Unity%20CE301/Capstone%20Project/Assets/Scripts/RacerAnimHandler.cs) is made, which transitions this state to the escape state. A health orb that the Racer will carry is also spawned at the end of the animation.
+When the Racer is in this state, the taunt animation is played. At the end of the animation, a call to a method in the [Racer Animation Handler Class](https://github.com/jamalcraig/Dunamis/blob/main/Unity%20CE301/Capstone%20Project/Assets/Scripts/RacerAnimHandler.cs) is made, which transitions this state to the escape state. A health orb that the Racer will carry is also spawned at the end of the animation.
 
 **Escape State**   
 When the Racer is in this state, animation that shows the Racer carrying the stolen health orb will be played. At short intervals, the Racer tells the Racer Pathfinding Class to calculate a path to the nearest exit. Once a path to the nearest exit is found the Racer will move towards it. Once the Racer has reached the exit, it will despawn along with health orb that it was carrying. 
@@ -109,7 +109,7 @@ The Racer will transition to this state when it killed. The Racer can be killed 
 
    
 ### Animation
-The [model and animations](https://cseegit.essex.ac.uk/ce301_2020/ce301_craig_jamal/-/tree/master/Unity%20CE301/Capstone%20Project/Assets/Animation/Racer) that I used for Racer are from [mixamo.com](https://www.mixamo.com/#/).  
+The [model and animations](https://github.com/jamalcraig/Dunamis/blob/main/Unity%20CE301/Capstone%20Project/Assets/Animation/Racer) that I used for Racer are from [mixamo.com](https://www.mixamo.com/#/).  
 ![Racer Model Image](Images/Racer/Racer_Mixamo_Image.png)   
 
 Racer has an animation controller that has two layers. The **base layer** contains the fundamental animations that the Racer uses. Its default animation is a blend tree of the Racer’s movement animations. Depending on the Racer’s velocity in a given direction, the appropriate blend of animations will be played. When the Racer isn’t moving, the idle animation will play. When the Racer is in close proximity to the player, an animation that makes the Racer run with its hands stretched out will be played.   
@@ -136,7 +136,7 @@ When the Racer is killed, the death animation is played, and the Racer will fall
 
 
 ## Player Clone
-The [Player Clone](https://cseegit.essex.ac.uk/ce301_2020/ce301_craig_jamal/-/blob/master/Unity%20CE301/Capstone%20Project/Assets/Scripts/PlayerClone.cs) is an NPC that the player can summon to collect Dunamis gems for the player.   
+The [Player Clone](https://github.com/jamalcraig/Dunamis/blob/main/Unity%20CE301/Capstone%20Project/Assets/Scripts/PlayerClone.cs) is an NPC that the player can summon to collect Dunamis gems for the player.   
 
 ### Basic Gameplay Loop
 When the player presses L2 on the PS4 controller, the Player Clone uses A* Search to travel to the nearest Dunamis gem that has been spawned at a gem spawner. Upon reaching the gem spawner, the Player Clone takes all the Dunamis gems that have been spawned there, and then travels back to the player, using A* Search. Once the Player Clone has reached close proximity to the player, the Player Clone stops moving and stretches out its hand to offer the Dunamis gems to the player. If the player moves a certain distance away from the Player Clone, it will recalculate a new path and will move to the player again. When the Player Clone offers the collected Dunamis gems, the player can take the gems by looking at the Player Clone and pressing R1 on the PS4 controller. The player will receive the same amount of Dunamis gems as the Player Clone collected.   
@@ -148,7 +148,7 @@ A finite-state machine (FSM) has been implemented in order to control the behavi
 When the Player Clone is in this state, it doesn’t do anything and just stands still. While in this state, if the player presses L2 on the PS4 controller, the state will transition into the Finding Gem state. This is the only state that the player can request for the Player Clone to collect Dunamis gems in.  
 
 **Finding the Gem**   
-When the Player Clone is in this state, it tells the [Player Clone Pathfinding Class](https://cseegit.essex.ac.uk/ce301_2020/ce301_craig_jamal/-/blob/master/Unity%20CE301/Capstone%20Project/Assets/Scripts/PlayerClonePathFind.cs) to calculate a path to the nearest spawned Dunamis gem. The Player Clone then uses this path to move to the gem spawner of the nearest spawned Dunamis gem. Once it reaches the gem spawner, all the Dunamis gems in the gem spawner are collected. Then the Play Clone’s state transitions to the Returning state.   
+When the Player Clone is in this state, it tells the [Player Clone Pathfinding Class](https://github.com/jamalcraig/Dunamis/blob/main/Unity%20CE301/Capstone%20Project/Assets/Scripts/PlayerClonePathFind.cs) to calculate a path to the nearest spawned Dunamis gem. The Player Clone then uses this path to move to the gem spawner of the nearest spawned Dunamis gem. Once it reaches the gem spawner, all the Dunamis gems in the gem spawner are collected. Then the Play Clone’s state transitions to the Returning state.   
 
 **Returning State**   
 When the Player Clone is in this state, at short intervals, it repeatedly tells the Player Clone Pathfinding Class to calculate a path to the player that will be used to move the Player Clone towards the player. Once the distance between the Player Clone and the player is within a certain range, this state will transition into the Giving state.   
@@ -160,7 +160,7 @@ When the Player Clone is in this state, it will stop moving, and stretch out its
 The Player Clone uses A* search to calculate its paths.   
 
 ### Animation
-The [model and animations](https://cseegit.essex.ac.uk/ce301_2020/ce301_craig_jamal/-/tree/master/Unity%20CE301/Capstone%20Project/Assets/Mixamo/David) that are used for Player Controller are from [mixamo.com](https://www.mixamo.com/#/). It is the same model that is used for the player, but the opacity of the materials/textures have been reduced so that it looks similar to a ghostlike figure.    
+The [model and animations](https://github.com/jamalcraig/Dunamis/blob/main/Unity%20CE301/Capstone%20Project/Assets/Mixamo/David) that are used for Player Controller are from [mixamo.com](https://www.mixamo.com/#/). It is the same model that is used for the player, but the opacity of the materials/textures have been reduced so that it looks similar to a ghostlike figure.    
 ![Player Clone Image](Images/Player_Clone/Player_Clone_Idle1.png)
 
 The Player Clone uses the same animation controller as the player. However, it does not utilise all the animations in this controller. This animation controller has three layers.   
@@ -191,4 +191,4 @@ This layer was originally implemented for the player’s animation in order to s
 **Player Clone’s Avatar Mask for Head and Chest**   
 ![Player Clone’s Avatar Mask for Head and Chest](Images/Player_Clone/Player_Clone_Head_Mask.png)   
 
-[Return to Master Repository](https://cseegit.essex.ac.uk/ce301_2020/ce301_craig_jamal/-/tree/master)
+[Return to Main Repository](https://github.com/jamalcraig/Dunamis)

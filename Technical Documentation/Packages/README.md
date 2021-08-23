@@ -14,7 +14,7 @@ This is a package I imported that allows game object positions to be placed and 
 Version 4.4.0  
 This is a package that allows construction and editing of geometry in Unity. I haven’t really used this feature, but the package is a prerequisite for Snaps Prototype Packs, which were created using ProBuilder.   
 
-## [Snaps Prototype Packs](https://cseegit.essex.ac.uk/ce301_2020/ce301_craig_jamal/-/tree/master/Unity%20CE301/Capstone%20Project/Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets)    
+## [Snaps Prototype Packs](https://github.com/jamalcraig/Dunamis/blob/main/Unity%20CE301/Capstone%20Project/Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets)    
 **[Snaps Prototype Office](https://assetstore.unity.com/packages/3d/environments/snaps-prototype-office-137490)**   
 ![Snaps Prototype Office](Snaps_Office.png)   
 
@@ -35,4 +35,4 @@ I downloaded this model of a lamp from [cgtrader.com](https://www.cgtrader.com/i
 
 
 
-[Return to Master Repository](https://cseegit.essex.ac.uk/ce301_2020/ce301_craig_jamal/-/tree/master)
+[Return to Main Repository](https://github.com/jamalcraig/Dunamis)

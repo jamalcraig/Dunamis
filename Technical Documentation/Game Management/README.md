@@ -17,4 +17,4 @@ When an enemy is killed, the class for the enemy references this class to actual
 The [Level Manager](https://github.com/jamalcraig/Dunamis/blob/main/Unity%20CE301/Capstone%20Project/Assets/Scripts/LevelManager.cs) class stores the grids that used for A* search. Generating the grids that are used for A* search is a quite slow operation, so the resolution of this problem was to generate one of each type of grid at the start of the game. The game objects will then copy this grid, instead of having to generate their own individual grids, which upon doing so may cause frames to drop during playtime.  
 
 
-[Return to Master Repository](https://github.com/jamalcraig/Dunamis/blob/main)
+[Return to Main Repository](https://github.com/jamalcraig/Dunamis)
