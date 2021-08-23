@@ -1,0 +1,104 @@
+PS4 Button Map
+
+[input][Unity Editor Input Name][PS4 Controller Button]
+
+- For iOS
+
+0 joystick button 4 = up
+1 joystick button 8 = L1
+2 9th axis = L1
+3 joystick button 5 = right
+4 10th axis = R1
+5 joystick button 9 = R1
+6 joystick button 2 = start
+7 joystick button 0 = null
+8 joystick button 1 = null
+9 joystick button 3 = null
+10 6th axis 
+11 6th axis = right
+12 8th axis = left
+13 7th axis = down
+14 joystick button 7 = left
+15 joystick button 6 = down
+16 joystick button 13 = circle
+17 4th axis = r stick vertical
+18 3rd axis = r stick horizontal
+19 joystick button 12 = triangle
+20 joystick button 10 = L2
+21 joystick button 11 = R2
+22 joystick button 14 = x
+23 joystick button 15 square
+24 joystick button 16 start 
+25 joystick button 17 L3
+26 5th axis up
+27 8th axis = left
+28 11th axis L2
+29 12th axis R2
+30 joystick button 18 R3
+31 joystick button 19 null
+
+
+Ordered
+0 joystick button 4 = up
+3 joystick button 5 = right
+15 joystick button 6 = down
+14 joystick button 7 = left
+1 joystick button 8 = L1
+5 joystick button 9 = R1
+20 joystick button 10 = L2
+21 joystick button 11 = R2
+19 joystick button 12 = triangle
+16 joystick button 13 = circle
+22 joystick button 14 = x
+23 joystick button 15 square
+24 joystick button 16 start 
+25 joystick button 17 L3
+30 joystick button 18 R3
+
+18 3rd axis = r stick horizontal
+17 4th axis = r stick vertical
+26 5th axis up
+11 6th axis = right
+13 7th axis = down
+12 8th axis = left
+2 9th axis = L1
+4 10th axis = R1
+28 11th axis L2
+29 12th axis R2
+
+
+
+
+
+- For the Unity Editor Mappings 
+https://www.reddit.com/r/Unity3D/comments/1syswe/ps4_controller_map_for_unity/  
+
+Buttons
+    Square  = joystick button 0
+    X       = joystick button 1
+    Circle  = joystick button 2
+    Triangle= joystick button 3
+    L1      = joystick button 4
+    R1      = joystick button 5
+    L2      = joystick button 6
+    R2      = joystick button 7
+    Share	= joystick button 8
+    Options = joystick button 9
+    L3      = joystick button 10
+    R3      = joystick button 11
+    PS      = joystick button 12
+    PadPress= joystick button 13
+
+Axes:
+    LeftStickX      = X-Axis
+    LeftStickY      = Y-Axis (Inverted?)
+    RightStickX     = 3rd Axis
+    RightStickY     = 4th Axis (Inverted?)
+    L2              = 5th Axis (-1.0f to 1.0f range, unpressed is -1.0f)
+    R2              = 6th Axis (-1.0f to 1.0f range, unpressed is -1.0f)
+    DPadX           = 7th Axis
+    DPadY           = 8th Axis (Inverted?)
+
+
+
+https://answers.unity.com/questions/1483922/how-to-map-controls-for-any-controller.html 

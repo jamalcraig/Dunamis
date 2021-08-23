@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 51a6da50c9c54448a81c24da6765d0a7
+  - enabled: 1
+    path: Assets/Scenes/Stage1.unity
+    guid: 81c7a150942e74e6885fd7babce0e5bf
+  - enabled: 1
+    path: Assets/Scenes/Testing Agent Size.unity
+    guid: 6e3ea79afaee044b99310cf363accb72
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: bf68848bd75884ea18720db12c4f94f9,
+      type: 2}

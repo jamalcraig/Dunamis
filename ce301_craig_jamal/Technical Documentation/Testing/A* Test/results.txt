@@ -1,0 +1,51 @@
+A* Search Testing - Enemy to Player
+
+Initially took 30ms-40ms to generate the path for the racer
+Was confuse why this was the case, when the debug logs were saying A* search calculation only took 0.1ms-0.2ms
+I changed the get methods which got the path generation time down to: 9ms, 13ms, 12ms, 9ms, 10ms
+RacerPathFind-100x100grid-17ms.png
+RacerPathFind-100x100grid-13ms.png
+RacerPathfind runtime results.png
+
+Used the profiler and realised the grid creation is the problem
+CreateGridIsTheProblem.png
+
+Stopped creating a new grid when path calculation is made. Now when the path calc is made, only the positions of moveable objects are updated.
+Drastic results: 
+Full path generation including grid update: 1.5ms, 1.4ms, 1.3ms 1.3ms 1.2ms 1.5ms
+DrasticallyOptimisedPathfind.png
+DrasticallyOptimisedPathfind2.png
+
+
+Drastically reduced RacerPathFind by making it so that the whole grid is only generated when the gamecharacter is instantiated. Now only the nodes for that gamecharacter is updated in the grid
+Now takes 0-2ms to do the full calculation. With a spike that can go up to 6ms. Probably when the grid is being created
+
+200x200 grid was still 0-2ms
+1000x100 grid was still 0-2ms - Grid Creation causes 2400ms, 2433ms, 2794ms, 2304ms, 2287ms spike
+1000x1000GridSpike.png
+1000x1000Results.png
+
+100x100 grid creation spike is 240ms (grid shown)?
+100x100 grid creation spike is 25ms, 24ms, 24ms, 25ms, 24ms 
+Worked out that showing the grid in the Unity Editor is very intensive to render
+GridShown.png
+GridNotShown.png
+
+No grid displayed
+200x200 grid creation spike is 92ms, 94ms, 95ms, 93ms, 96ms - Not even a noticeable spike
+200x200PathfindResults.png
+200x200GridNotShown.png
+
+500x500 grid creation spike is 559ms, 560ms, 559ms, 557ms, 557ms
+500x500GridSpike.png
+
+200x200 grid creation spike is still 92ms with grid shown, but the grid shown causes different (rendering) problems in the unity editor, which causes the frames to drop
+200x200GridSpikeGridShown.png
+
+100x100 grid creation spike is still 25ms with grid shown
+100x100GridSpikeGridShown.png
+I think 100x100 is the most appropriate level size
+
+I changed the variable grid code so that only one grid is created for the racers and they all copy the values of that first grid when they are instantiated. Now I 1000x1000 grids don't drop frames when a new racer is instantiated
+1000x1000AfterGridChangeSmoothResults.png
+1000x1000AfterGridChange.png

@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Sphere
+  - NPCSphere
+  - Waypoints Parent
+  - Test Cube
+  - Spawn Pos
+  - Rock Spawner
+  - Waypoint Marker Icon
+  - Racer
+  - Bowl
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - BlockedPath
+  - Sand
+  - Mud
+  - Path
+  - Enemy
+  - RockSpawner
+  - Rock Cube
+  - Player Clone
+  - Exit
+  - Tray
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
