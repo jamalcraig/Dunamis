@@ -16,7 +16,7 @@ The reason why this class is called variable grid is because it automatically cr
 This class also uses wire cube gizmos to make the grid visible in the scene view of the Unity editor. The layer masks of the nodes in the grid are identified by different colours. It is intensive for the renderer to display the grid using gizmos, especially the larger the grid becomes, so I usually have the class set to not display the grid, so that the game can run smoothly.   
 
 **Variable Grid Visualised by Gizmos**   
-![Variable Grid Visualised by Gizmos](/Reports/Media/Grid-5-edited.gif)   
+![Variable Grid Visualised by Gizmos](Grid-5-edited.gif)   
 
 ## [A* search](https://github.com/jamalcraig/Dunamis/blob/main/Unity%20CE301/Capstone%20Project/Assets/Scripts/AStarBase.cs)
 Different types of game objects that use path planning inherit methods from the base A* search
